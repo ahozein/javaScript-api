@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #F6F9FF;
+    height: 100vh;
+    width: 100%;
+    color: #434343;
+    font-size: 16px;
+}
+
+div.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #8b55ea;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#main {
+    display: none;
+    text-align: center;
+}
+
+main.cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    padding: 16px;
+    align-content: stretch;
+
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    padding: 1rem 1.5rem 2rem;
+    border-radius: 8px;
+    margin: 0 0 16px 32px;
+    max-width: 350px;
+    justify-content: space-between;
+}
+
+main.cards section.card>div:first-child {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+main.cards section.card>div img {
+    height: 150px;
+    /* height: auto; */
+    border-radius: 5px;
+}
+
+main.cards section.card>div h3 {
+    font-size: 100%;
+
+    margin: 16px 0;
+}
+
+main.cards section.card>div span {
+    font-weight: 300;
+    width: 100%;
+    font-size: 80%;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+main.cards section.card button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 35px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 16px 0;
+}
+
+main.cards section.card.shop button {
+    margin-left: 35px;
+    background: linear-gradient(to right, #8b55ea, #beadd9);
+}
+
+main.cards section.card.shop button:hover {
+    background: linear-gradient(to right, #4b16a1, #9F66FF);
+}
+
+main.cards section.card.shop {
+    box-shadow: 20px 20px 50px -30px #cab0f3;
+}
+
+div.card-footer {
+    display: flex;
+    align-items: baseline;
+}
+
+div.badge {
+    position: absolute;
+    display: flex;
+    margin: 5px 5px;
+}
+
+#category-badge {
+    background: linear-gradient(to right, #2d16a1, #d166ff);
+    padding: 0.2rem 0.4rem;
+    border-radius: 35px;
+    border: 0;
+    font-size: 80%;
+    color: #ffffff;
+}
+
+#rating-badge-good {
+    background: linear-gradient(to right, #129745, #27ef2a);
+    padding: 0.2rem 0.4rem;
+    border-radius: 35px;
+    border: 0;
+    font-size: 80%;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+#rating-badge-bad {
+    background: linear-gradient(to right, #d41313, #d05757);
+    padding: 0.2rem 0.4rem;
+    border-radius: 35px;
+    border: 0;
+    font-size: 80%;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+
+@media screen and (max-width: 720px) {
+    main.cards {
+        flex-direction: column;
+        align-content: space-around
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+
+}
